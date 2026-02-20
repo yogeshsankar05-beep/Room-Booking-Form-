@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Booking Details</h2>
+    <div id="details"></div>
+
+    <button onclick="goBack()">Go Back</button>
+</div>
+
+<script>
+    let data = JSON.parse(localStorage.getItem("bookingDetails"));
+
+    document.getElementById("details").innerHTML = `
+        <p><strong>Name:</strong> ${data.fullname}</p>
+        <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Phone:</strong> ${data.phone}</p>
+        <p><strong>Check-in:</strong> ${data.checkin}</p>
+        <p><strong>Check-out:</strong> ${data.checkout}</p>
+        <p><strong>Room Type:</strong> ${data.roomtype}</p>
+        <p><strong>Guests:</strong> ${data.guests}</p>
+        <p><strong>Payment:</strong> ${data.payment}</p>
+        <p><strong>Requests:</strong> ${data.requests}</p>
+    `;
+
+    function goBack() {
+        window.location.href = "hotel.html";
+    }
+</script>
+
+</body>
+</html>
